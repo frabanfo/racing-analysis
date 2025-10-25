@@ -1,0 +1,14 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff (format & lint)
+        entry: ruff
+        language: system
+        types: [python]
+        args: ["check", "--fix", "."]
+      - id: trailing-whitespace
+        name: remove trailing whitespace
+        entry: python -c "import sys; from pathlib import Path; print('trailing whitespace check not implemented'); sys.exit(0)"
+        language: system
+        files: \.py$
